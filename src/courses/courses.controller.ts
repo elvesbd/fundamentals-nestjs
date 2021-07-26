@@ -2,9 +2,12 @@ import { Patch } from '@nestjs/common';
 import { Delete } from '@nestjs/common';
 import { HttpCode, HttpStatus } from '@nestjs/common';
 import { Body, Controller, Get, Param, Post, Res } from '@nestjs/common';
+import { CoursesService } from './courses.service';
 
 @Controller('courses')
 export class CoursesController {
+  constructor(private readonly coursesService: CoursesService) {}
+
   @Get()
   findAll(@Res() response) {
     return response.status(200).send('Listagem de cursos');
