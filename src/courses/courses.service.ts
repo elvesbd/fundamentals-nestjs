@@ -24,9 +24,8 @@ export class CoursesService {
         `Course ID ${id} does not exist`,
         HttpStatus.NOT_FOUND,
       );
-    } else {
-      return course;
     }
+    return course;
   }
 
   create(createCourseDto: any) {
